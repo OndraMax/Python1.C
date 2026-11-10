@@ -1,12 +1,12 @@
 print("Ahoj!")
 print()  # Udělá prázdný řádek
 
-# (f string) slouží k uložení dat (text, číslo, atd.)
+# proměnné slouží k uložení dat (text, číslo, atd.)
 jmeno = "Franta"
 rok = 2007
 
-# Nejlepší způsob vypisování textu
-print(f"Jmenuju se {jmeno}, narodil jsem se v roce {rok}.") # Před uvozovky napíšu f a do závorek {} dám proměnné (jinak f string)
+# Nejlepší způsob vypisování textu (f string)
+print(f"Jmenuju se {jmeno}, narodil jsem se v roce {rok}.") # Před uvozovky napíšu f a do závorek {} dám proměnné
 
 # V printu jdou počítat příklady
 cislo_a = 15
