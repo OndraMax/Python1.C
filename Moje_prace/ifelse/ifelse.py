@@ -1,16 +1,30 @@
-# if-else (Heslo, Věk)
+# Jde jen o ukázkové heslo pro procvičení podmínek.
 heslo = input("Zadej heslo: ")
 
-if heslo == "tajne123":
-    print("Přístup povolen!") # Jestli zadám dobré heslo, zobrazí se tohle.
+if heslo != "tajne123":
+    print("Špatné heslo!")
 else:
-    print("Špatné heslo!") # Jestli zadám špatné heslo, zobrazí se tohle.
+    # Na věk se ptáme pouze po zadání správného hesla.
+    while True:
+        try:
+            vek = int(input("Kolik ti je let? "))
+        except ValueError:
+            print("Zadej věk jako celé číslo.")
+            continue
 
-vek = int(input("Kolik ti je let? ")) # Funkce int() převede text na celé číslo, abych s ním mohl počítat.
+        if vek < 0:
+            print("Věk nemůže být záporný.")
+        else:
+            break
 
-if vek >= 18: # Pomocí f-stringu vložím hodnotu proměnné 'vek' přímo do textu
-    print(f"Je ti {vek} let, přístup povolen!")
-elif vek >= 14:
-    print(f"Je ti {vek} let, do přístupu ti zbývájí {18 - vek} roky.")
-else: # Složené závorky {18 - vek} vypočítají zbývající roky
-    print(f"Je ti {vek} let, do přístupu ti zbývá {18 - vek} let.") 
+    if vek >= 18:
+        print(f"Je ti alespoň 18 let, přístup povolen!")
+    else:
+        zbyva = 18 - vek
+        # Podle počtu zbývajících let vybereme správný tvar slova.
+        if zbyva == 1:
+            print("Do přístupu ti zbývá 1 rok.")
+        elif zbyva <= 4:
+            print(f"Do přístupu ti zbývají {zbyva} roky.")
+        else:
+            print(f"Do přístupu ti zbývá {zbyva} let.")
