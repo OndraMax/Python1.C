@@ -1,7 +1,14 @@
 import random
 import string
 
-delka = int(input("Jak dlouhé heslo chceš vygenerovat? "))
+# Opakujeme dotaz, dokud uživatel nezadá kladné číslo.
+while True:
+    delka = int(input("Jak dlouhé heslo chceš vygenerovat? "))
+
+    if delka > 0:
+        break  # Platná délka ukončí tuto smyčku.
+
+    print("Délka hesla musí být alespoň 1.")
 
 znaky = string.ascii_letters + string.digits # Spojím malé a velké písmenka, čísla a znaky
 heslo = ""
